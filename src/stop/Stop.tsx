@@ -12,6 +12,7 @@ import browser from 'webextension-polyfill'
 import {motion} from 'framer-motion'
 import {QuoteWhileBreathing} from './QuoteWhileBreathing'
 import {useQuote} from './useQuote'
+import { QUIZ_HOST } from '@utils'
 
 type Step =
   | 'breathing'
@@ -101,7 +102,7 @@ const Stop = () => {
                     breathingPattern={breathingPattern}
                     numberOfBreath={1}
                     onComplete={() => {
-                      const redirectUrl = `http://127.0.0.1:5000/quiz?endpoint=${
+                      const redirectUrl = `${QUIZ_HOST}/quiz?endpoint=${
                         deniedUrl || 'null'
                       }&code=${codeValue || 'null'}`
                       if (breathingPattern.name === '3') {
