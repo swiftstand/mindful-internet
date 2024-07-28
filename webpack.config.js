@@ -174,8 +174,8 @@ const options = {
       template: path.join(__dirname, 'src', 'options', 'index.html'),
       filename: 'options.html',
       meta: {
-        title: 'Mindful Internet Use',
-        description: 'A Chrome Extension that prevents mindless browsing',
+        title: 'LearnFirst',
+        description: '', //'A Chrome Extension that prevents mindless browsing',
       },
       chunks: ['options'],
       cache: false,
@@ -184,7 +184,7 @@ const options = {
       template: path.join(__dirname, 'src', 'popup', 'index.html'),
       filename: 'popup.html',
       meta: {
-        title: 'Mindful Internet Use',
+        title: 'LearnFirst',
         description: 'A Chrome Extension that prevents mindless browsing',
       },
       chunks: ['popup'],
@@ -195,7 +195,7 @@ const options = {
       template: path.join(__dirname, 'src', 'stop', 'index.html'),
       filename: 'stop.html',
       meta: {
-        title: 'Mindful Internet Use',
+        title: 'LearnFirst',
         description: 'A Chrome Extension that prevents mindless browsing',
       },
       chunks: ['stop'],

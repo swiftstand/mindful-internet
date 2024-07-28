@@ -44,7 +44,7 @@ export const Popup = () => {
             <Logo size={24} />
 
             <div className="pl-2 text-sm font-bold text-amber-50">
-              Mindful <br /> <span>Internet Use</span>
+              <span className="text-amber-50">LearnFirst</span>
             </div>
           </div>
           <OnOffSwitch />
@@ -58,13 +58,13 @@ export const Popup = () => {
               onClick={() => addToCurrentUrlToMindlessList()}
               className={`${buttonStyle}  bg-mui-blue-darkest text-amber-50 shadow-md  shadow-mui-blue-darkest    focus:outline-none focus-visible:outline-mui-blue focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 `}
             >
-              Add current url
+              Lock Site
             </button>
             <button
               onClick={() => goToOptions()}
               className={`${buttonStyle}  bg-mui-blue-darkest text-amber-50  shadow-md  shadow-mui-blue-darkest focus:outline-none focus-visible:outline-mui-blue focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 active:border-mui-blue-darkest`}
             >
-              Options
+              Settings
             </button>
           </div>
         )}

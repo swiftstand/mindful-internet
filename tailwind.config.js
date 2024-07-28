@@ -11,11 +11,11 @@ module.exports = {
           alpha: 'rgba(10,17,26,0.60)',
         },
         'mui-gold': {
-          DEFAULT: '#c59867',
-          light: '#d5a577',
-          dark: '#ab8551',
-          darkest: '#a27c42',
-          alpha: 'rgba(196,151,102,0.2)',
+          DEFAULT: 'hsla(300, 57%, 50%, 0.76)',
+          light: 'hsla(300, 57%, 50%, 0.76)',
+          dark: 'hsla(300, 57%, 50%, 0.76)',
+          darkest: 'hsla(300, 57%, 50%, 0.76)',
+          alpha: 'hsla(299, 86%, 42%, 1)',
         },
       },
       transformOrigin: {

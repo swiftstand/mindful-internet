@@ -10,7 +10,5 @@ export const MindlessUrlList = () => {
     return null
   }
 
-  return (
-    <InputList breathingRequired list={urls} onChange={urls => setUrls(urls)} />
-  )
+  return <InputList list={urls} onChange={urls => setUrls(urls)} />
 }

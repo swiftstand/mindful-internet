@@ -12,7 +12,7 @@ import browser from 'webextension-polyfill'
 import {motion} from 'framer-motion'
 import {QuoteWhileBreathing} from './QuoteWhileBreathing'
 import {useQuote} from './useQuote'
-import { QUIZ_HOST } from '@utils'
+import {QUIZ_HOST} from '@utils'
 
 type Step =
   | 'breathing'
@@ -83,7 +83,7 @@ const Stop = () => {
           <Logo />
 
           <div className="p-2  font-bold">
-            Mindful <br /> <span className="text-mui-gold">Internet Use</span>
+            <span className="text-amber-50">LearnFirst</span>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "short_name": "MIU",
   "version": "1.0.14",
-  "name": "Mindful Internet Use",
+  "name": "LearnFirst",
   "description": "A Chrome Extension that prevents mindless browsing",
   "options_page": "options.html",
   "background": {
