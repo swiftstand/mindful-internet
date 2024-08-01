@@ -32,10 +32,18 @@ export type MiuStorage = {
 
 export type MiuStorageKey = keyof MiuStorage
 
-export type BreathingPatternName = '424' | '4444' | '55' | '478' | '4242' | '3'
+export type BreathingPatternName =
+  | '424'
+  | '4444'
+  | '55'
+  | '478'
+  | '4242'
+  | '3'
+  | '2'
 
 export type BreathingLabel =
   | 'Breathe In'
   | 'Hold'
   | 'Breathe Out'
   | 'Redirecting'
+  | 'Countdown'

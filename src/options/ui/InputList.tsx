@@ -17,7 +17,7 @@ export interface InputListProps {
 
 export const InputList = ({
   list,
-  breathingRequired = false,
+  breathingRequired = true,
   onChange,
 }: InputListProps) => {
   const [isLocked, setIsLocked] = useState(breathingRequired)
@@ -71,9 +71,9 @@ export const InputList = ({
           <LockedBeforeBreathing
             description={
               <p className="text-center text-sm	font-bold uppercase leading-7 tracking-wider text-amber-50 ">
-                Setting requires breathing <br />
+                requires countdown to remove url <br />
                 <span className=" text-sm font-bold text-amber-50	underline decoration-mui-gold decoration-2 underline-offset-4">
-                  Items can still be added
+                  Other URLs can still be added
                 </span>
               </p>
             }

@@ -1,6 +1,5 @@
 import React, {ReactNode} from 'react'
 import {useSyncedState} from '@utils'
-import {TextInput} from '@option-ui'
 
 interface QuizProps {
   placeHolder?: string | null
@@ -29,14 +28,26 @@ export const InputText = ({
   onChange,
   placeHolder,
 }: TextBoxInputProps) => {
+  console.log(placeHolder)
   return (
-    <label className="flex items-center space-x-3 text-gray-400">
-      <TextInput
-        placeHolder={placeHolder ? placeHolder : undefined}
-        boxValue={value ? value : ''}
-        onChange={onChange}
-      />
-    </label>
+    <ul className=" mb-3 max-h-[400px] overflow-y-auto py-2 pr-2">
+      <li className="rounded odd:bg-mui-blue-dark even:bg-mui-blue">
+        {/* <TextInput
+          placeHolder={placeHolder ? placeHolder : undefined}
+          boxValue={value ? value : ''}
+          onChange={onChange}
+        /> */}
+
+        <input
+          autoFocus={false}
+          // onBlur={() => onBlur()}
+          onChange={e => onChange(e.target.value)}
+          type="text"
+          value={value ? value : ''}
+          className="w-full rounded-xl border-2 border-transparent bg-inherit p-3 text-amber-50 transition    focus:border-amber-50   focus:outline-none"
+        />
+      </li>
+    </ul>
   )
 }
 

@@ -2,9 +2,10 @@ import React, {useState} from 'react'
 import {
   // NavList,
   NavListProps,
-  QuotesTab,
+  // QuotesTab,
   SettingsTab,
   WebsitesTab,
+  QuizCodeTab,
 } from './modules'
 import {Logo} from '@utils'
 import {NavList} from './modules'
@@ -47,7 +48,7 @@ const Options = () => {
                 case 'websites':
                   return <WebsitesTab />
                 case 'quotes':
-                  return <QuotesTab />
+                  return <QuizCodeTab />
                 case 'settings':
                   return <SettingsTab />
                 default:

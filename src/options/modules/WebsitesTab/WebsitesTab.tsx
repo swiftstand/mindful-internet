@@ -4,7 +4,7 @@ import {SectionContainer, SectionHeading, TabHeading} from '@option-ui'
 
 import {MindlessUrlList} from './MindlessUrlList'
 import {MindlessIcon} from '@utils'
-import {QuizCode} from '../SettingsTab/TextSettings'
+// import {QuizCode} from '../SettingsTab/TextSettings'
 
 export const WebsitesTab = () => {
   return (
@@ -13,10 +13,10 @@ export const WebsitesTab = () => {
         <MindlessIcon /> Manage Block List
       </TabHeading>
 
-      <SectionContainer>
+      {/* <SectionContainer>
         <SectionHeading>Enter Quiz Code</SectionHeading>
         <QuizCode />
-      </SectionContainer>
+      </SectionContainer> */}
 
       <SectionContainer>
         <SectionHeading>

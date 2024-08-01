@@ -4,6 +4,7 @@ import {breathing55} from './55'
 import {breathing478} from './478'
 import {breathing4242} from './4242'
 import {breathing3} from './3'
+import {breathing2} from './2'
 
 import {BreathingLabel, BreathingPatternName} from '@types'
 
@@ -14,6 +15,7 @@ export const breathingPatterns = [
   breathing55,
   breathing478,
   breathing3,
+  breathing2,
 ] as const
 
 export interface BreathingPattern {

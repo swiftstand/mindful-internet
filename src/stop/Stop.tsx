@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Breathing} from './Breathing'
-import {CompleteBreathing} from './CompleteBreathing'
+// import {CompleteBreathing} from './CompleteBreathing'
 import {CopyQuote} from './CopyQuote'
 import {
   Logo,
@@ -22,16 +22,16 @@ type Step =
   | 'notInitialized'
 
 const useCurrentStep = () => {
-  const [showQuoteWhileBreathing] = useSyncedState('showQuoteWhileBreathing')
+  // const [showQuoteWhileBreathing] = useSyncedState('showQuoteWhileBreathing')
   const [currentStep, setCurrentStep] = useState<Step>('notInitialized')
 
   useEffect(() => {
-    if (showQuoteWhileBreathing) {
-      setCurrentStep('breathingWithQuote')
-    } else {
-      setCurrentStep('breathing')
-    }
-  }, [showQuoteWhileBreathing])
+    // if (showQuoteWhileBreathing) {
+    //   setCurrentStep('breathingWithQuote')
+    // } else {
+    setCurrentStep('breathing')
+    // }
+  }, [])
 
   return [currentStep, setCurrentStep] as const
 }
@@ -119,7 +119,7 @@ const Stop = () => {
               </div>
             )
           case 'completeBreathing':
-            return <CompleteBreathing quote={quote} />
+            return <p>PREPARING QUIZ</p> //<CompleteBreathing quote={quote} />
           case 'copyQuote':
             return <CopyQuote quote={quote} />
           default:

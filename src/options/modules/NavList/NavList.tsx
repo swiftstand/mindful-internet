@@ -1,6 +1,6 @@
 import React from 'react'
 import {NavItem} from './NavItem'
-import {SettingsIcon} from '@utils'
+import {SettingsIcon, QuizIcon} from '@utils'
 // QuotesIcon SettingsIcon MindlessIcon
 export interface NavListProps {
   activeTab: 'websites' | 'quotes' | 'settings'
@@ -18,13 +18,13 @@ export const NavList = ({onChange, activeTab}: NavListProps) => {
           <SettingsIcon />
           Options
         </NavItem>
-        {/* <NavItem
+        <NavItem
           onClick={() => onChange('quotes')}
           active={activeTab === 'quotes'}
         >
-          <QuotesIcon />
-          Motivational quotes
-        </NavItem> */}
+          <QuizIcon />
+          Change Quiz Code
+        </NavItem>
         {/* <NavItem
           onClick={() => onChange('settings')}
           active={activeTab === 'settings'}

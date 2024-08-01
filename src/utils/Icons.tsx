@@ -19,6 +19,25 @@ export const QuotesIcon = () => {
   )
 }
 
+export const QuizIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 5a1 1 0 011 1v4a1 1 0 01-2 0v-4a1 1 0 011-1zm0 6.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+      />
+    </svg>
+  )
+}
+
 {
   /* <svg
       xmlns="http://www.w3.org/2000/svg"

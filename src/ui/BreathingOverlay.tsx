@@ -15,7 +15,7 @@ export const BreathingOverlay = ({
   onBreathingComplete,
 }: BreathingOverlayProps) => {
   const numberOfBreath = useNumberOfBreath()
-  const breathingPattern = useBreathingPattern()
+  const breathingPattern = useBreathingPattern('2')
 
   if (numberOfBreath === null || breathingPattern === null) {
     return null
@@ -42,7 +42,7 @@ export const BreathingOverlay = ({
         <Breathing
           breathingPattern={breathingPattern}
           onComplete={() => onBreathingComplete()}
-          numberOfBreath={numberOfBreath}
+          numberOfBreath={100}
         />
       </div>
     </Dialog>

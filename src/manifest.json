@@ -1,15 +1,14 @@
 {
-  "manifest_version": 2,
-  "short_name": "MIU",
+  "manifest_version": 3,
+  "short_name": "LF",
   "version": "1.0.14",
   "name": "LearnFirst",
   "description": "A Chrome Extension that prevents mindless browsing",
   "options_page": "options.html",
   "background": {
-    "scripts": ["background.bundle.js"],
-    "persistent": true
+    "service_worker": "background.bundle.js"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": "logo.png"
   },

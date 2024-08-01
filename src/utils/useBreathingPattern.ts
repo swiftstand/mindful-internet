@@ -2,7 +2,9 @@ import {useSyncedState} from './useSyncedState'
 import {breathingPatterns} from '../breathing-patterns'
 import {errorHandler} from '@ui'
 
-export const useBreathingPattern = (isRedirecting?: boolean | undefined) => {
+export const useBreathingPattern = (
+  isRedirecting?: boolean | string | undefined,
+) => {
   const [patternName] = useSyncedState('selectedBreathingPattern')
 
   if (patternName === null) {
@@ -11,8 +13,10 @@ export const useBreathingPattern = (isRedirecting?: boolean | undefined) => {
 
   let pattern
 
-  if (isRedirecting) {
+  if (isRedirecting === true) {
     pattern = breathingPatterns.find(pattern => pattern.name === '3')
+  } else if (isRedirecting === '2') {
+    pattern = breathingPatterns.find(pattern => pattern.name === '2')
   } else {
     pattern = breathingPatterns.find(pattern => pattern.name === patternName)
   }

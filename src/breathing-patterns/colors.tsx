@@ -1,5 +1,5 @@
 export const BREATHING_COLORS = {
-  in: 'rgb(245, 190, 121)',
-  hold: '#fff',
-  out: 'rgb(255, 190, 121)',
+  in: 'hsla(300, 57%, 50%, 0.76)',
+  hold: 'hsla(300, 57%, 50%, 0.76)',
+  out: 'hsla(300, 57%, 50%, 0.76)',
 }
