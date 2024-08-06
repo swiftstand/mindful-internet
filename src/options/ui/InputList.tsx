@@ -5,8 +5,9 @@ import React, {
   useEffect,
   forwardRef,
   ForwardedRef,
+  useCallback,
 } from 'react'
-import {Button, LockedBeforeBreathing} from '@ui'
+import {BreathingOverlay, Button} from '@ui'
 import {TrashIcon} from '@heroicons/react/solid'
 
 export interface InputListProps {
@@ -17,17 +18,26 @@ export interface InputListProps {
 
 export const InputList = ({
   list,
-  breathingRequired = true,
+  breathingRequired = false,
   onChange,
 }: InputListProps) => {
-  const [isLocked, setIsLocked] = useState(breathingRequired)
+  // const [isLocked, setIsLocked] = useState(breathingRequired)
   const [itemHasBeenAdded, setItemHasBeenAdded] = useState(false)
   const listRef = useRef<HTMLUListElement | null>(null)
   const addButtonRef = useRef<HTMLButtonElement | null>(null)
 
-  const removeItem = (indexToRemove: number) => {
-    onChange(list.filter((_, index) => index !== indexToRemove))
-  }
+  const removeItem = useCallback(
+    (indexToRemove: number | undefined) => {
+      if (indexToRemove && indexToRemove > 0) {
+        onChange(list.filter((_, index) => index !== indexToRemove))
+      } else {
+        onChange([])
+      }
+      setIsUnlocking(false)
+      setIndexToRemove(undefined)
+    },
+    [onChange, list],
+  )
 
   const removeEmptyItems = () => {
     onChange(list.filter(item => Boolean(item.trim())))
@@ -63,21 +73,17 @@ export const InputList = ({
     }
   }, [itemHasBeenAdded, list])
 
-  const showLockedOverlay = isLocked && list.length > 0
+  // const showLockedOverlay = isLocked && list.length > 0
+
+  const [isUnlocking, setIsUnlocking] = useState(breathingRequired)
+  const [indexToRemove, setIndexToRemove] = useState<undefined | number>()
   return (
     <div>
-      <div className={`${showLockedOverlay ? 'min-h-[220px]' : ''} relative `}>
-        {showLockedOverlay && (
-          <LockedBeforeBreathing
-            description={
-              <p className="text-center text-sm	font-bold uppercase leading-7 tracking-wider text-amber-50 ">
-                requires countdown to remove url <br />
-                <span className=" text-sm font-bold text-amber-50	underline decoration-mui-gold decoration-2 underline-offset-4">
-                  Other URLs can still be added
-                </span>
-              </p>
-            }
-            onUnlock={() => setIsLocked(false)}
+      <div className={`${isUnlocking ? 'min-h-[220px]' : ''} relative `}>
+        {isUnlocking && (
+          <BreathingOverlay
+            onClose={() => setIsUnlocking(false)}
+            onBreathingComplete={() => removeItem(indexToRemove)}
           />
         )}
 
@@ -92,12 +98,15 @@ export const InputList = ({
                 className="rounded odd:bg-mui-blue-dark even:bg-mui-blue"
               >
                 <InputRow
-                  disabled={isLocked}
+                  disabled={isUnlocking}
                   onEnter={() => removeEmptyItems()}
                   onBlur={() => removeEmptyItems()}
                   onChange={inputValue => updateItem(inputValue, index)}
                   value={item}
-                  onRemoveClick={() => removeItem(index)}
+                  onRemoveClick={() => {
+                    setIndexToRemove(index)
+                    setIsUnlocking(true)
+                  }}
                 />
               </li>
             ))}

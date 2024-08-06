@@ -16,7 +16,7 @@ export const NavList = ({onChange, activeTab}: NavListProps) => {
           active={activeTab === 'websites'}
         >
           <SettingsIcon />
-          Options
+          Distractions
         </NavItem>
         <NavItem
           onClick={() => onChange('quotes')}
